@@ -1,0 +1,62 @@
+gpu:
+  value: 3
+sweep:
+  value: False
+lr:
+  desc: Learning rate for optimiser
+  value: 0.001815
+batch_size:
+  value: 18
+epochs:
+  desc: Maximum number of epochs to run
+  value: 400
+patience:
+  desc: Not yet supported
+  value: 30
+dropout:
+  desc: Probability of dropping out a hidden unit
+  value: 0.188
+bn:
+  desc: Whether to use batch normalisation (TODO Not yet supported)
+  value: True
+update_edge_attr:
+  desc: Whether to update the edge attributes in the hypergraph layer
+  value: False
+use_demographic_information:
+  value: False
+n_graph_layers:
+  desc: Number of hidden layers
+  value: 2
+n_hidden_layers:
+  desc: Number of hidden layers
+  value: 2
+n_hidden_layers_pred:
+  desc: Number of hidden layers
+  value: 1
+n_hidden_layers_prior_var:
+  desc: Number of hidden layers for computing prior var (identifiable VAE)
+  value: 1
+meta_G:
+  value: 67
+d_patient:
+  value: 21
+d_gene:
+  value: 117
+d_edge_attr:
+  value: 22
+d_tissue:
+  value: 23
+d_edge:
+  value: 21
+n_heads:
+  value: 12
+beta:
+  value: 1
+n_top_genes:
+  value: null
+attention_strategy:
+  value: 'patient'
+metagenes_encoder:
+  value: 'plain'
+loss_type:
+  value: 'normal'

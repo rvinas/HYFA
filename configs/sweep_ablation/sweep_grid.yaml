@@ -1,0 +1,60 @@
+program: train_gtex.py
+method: grid
+project: multitissue_imputation
+entity: multitissue_imputation_project
+metric:
+  goal: minimize
+  name: val_loss
+parameters:
+  gpu:
+    value: 0
+  sweep:
+    value: True
+  epochs:
+    value: 100
+  patience:
+    value: 30
+  lr:
+    values: [0.0001, 0.0005, 0.001, 0.005, 0.01]
+  batch_size:
+    values: [16, 32, 64]
+  dropout:
+    values: [0.0, 0.1, 0.25, 0.5]
+  norm:
+    values: ['batch', 'layer', 'none']
+  activation:
+    values: ['relu', 'swish']
+  update_edge_attr:
+    values: [True, False]
+  use_demographic_information:
+    value: True
+  n_graph_layers:
+    values: [1, 2, 3]
+  n_hidden_layers:
+    values: [1, 2]
+  n_hidden_layers_pred:
+    values: [1, 2]
+  n_hidden_layers_prior_var:
+    value: 0
+  d_patient:
+    values: [16, 32, 64, 128]
+  d_gene:
+    values: [16, 32, 64, 128]
+  d_edge_attr:
+    values: [16, 32, 64, 128]
+  d_tissue:
+    values: [16, 32, 64, 128]
+  d_edge:
+    values: [16, 32, 64, 128]
+  n_heads:
+    values: [4, 8, 16, 32]
+  beta:
+    value: 0.
+  attention_strategy:
+    value: 'patient'
+  loss_type:
+    value: 'normal'
+  layer:
+    values: ['gat', 'mpnn']
+  meta_G:
+    values: [1, 10, 50, 100, 200, 500, 1000]

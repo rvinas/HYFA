@@ -1,0 +1,72 @@
+program: train_gtex.py
+method: bayes
+project: multitissue_imputation
+entity: multitissue_imputation_project
+metric:
+  goal: minimize
+  name: val_loss
+parameters:
+  gpu:
+    value: 0
+  sweep:
+    value: True
+  epochs:
+    value: 100
+  patience:
+    value: 30
+  lr:
+    min: 0.0001
+    max: 0.005
+  batch_size:
+    min: 16
+    max: 64
+  dropout:
+    min: 0.0
+    max: 0.5
+  norm:
+    values: ['batch', 'layer', 'none']
+  activation:
+    values: ['relu', 'swish']
+  update_edge_attr:
+    values: [True, False]
+  use_demographic_information:
+    value: True
+  n_graph_layers:
+    min: 1
+    max: 3
+  n_hidden_layers:
+    min: 1
+    max: 2
+  n_hidden_layers_pred:
+    min: 1
+    max: 2
+  n_hidden_layers_prior_var:
+    value: 0
+  d_patient:
+    min: 16
+    max: 128
+  d_gene:
+    min: 16
+    max: 128
+  d_edge_attr:
+    min: 16
+    max: 128
+  d_tissue:
+    min: 16
+    max: 128
+  d_edge:
+    min: 16
+    max: 128
+  n_heads:
+    min: 4
+    max: 32
+  beta:
+    value: 0.
+  attention_strategy:
+    value: 'patient'
+  loss_type:
+    value: 'normal'
+  layer:
+    value: 'gat'
+  meta_G:
+    value: 100
