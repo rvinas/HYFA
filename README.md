@@ -3,7 +3,6 @@
 ## Quick reference of main files
 - `train_gtex.py`: Main script to train the multi-tissue imputation model on normalised GTEx data
 - `train_GTEx_v8_normalised.ipynb`: Analysis of multi-tissue imputation quality on normalised data (i.e. model trained via `train_gtex.py`)
-- `train_GTEx_v8_nb.ipynb`: Analysis of multi-tissue imputation quality on model operating on raw counts
 - `train_GTEx_v9_deconvolution.ipynb`: Analysis of cell-type signature imputation (i.e. fine-tunes model on GTEx-v9)
 
 ## Data
