@@ -1,0 +1,6 @@
+*__pycache__*
+data/*
+wandb/*
+*idea/*
+results/*
+.ipynb_checkpoints/*
