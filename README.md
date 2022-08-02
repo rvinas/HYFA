@@ -25,3 +25,19 @@
 ## Other utils
 - `src/pathway_utils.py`: Utilities to retrieve KEGG pathways
 - `src/ct_signature_utils.py`: Utilities for inferring cell-type signatures
+
+## Citation
+If you use this code for your research, please cite our paper:
+```
+@article {Vinas2022Hypergraph,
+	author = {Vinas Torne, Ramon and Joshi, Chaitanya K. and Dumitrascu, Bianca and Gamazon, Eric and Lio, Pietro},
+	title = {Hypergraph factorisation for multi-tissue gene expression imputation},
+	elocation-id = {2022.07.31.502211},
+	year = {2022},
+	doi = {10.1101/2022.07.31.502211},
+	publisher = {Cold Spring Harbor Laboratory},
+	URL = {https://www.biorxiv.org/content/early/2022/08/01/2022.07.31.502211},
+	eprint = {https://www.biorxiv.org/content/early/2022/08/01/2022.07.31.502211.full.pdf},
+	journal = {bioRxiv}
+}
+```
