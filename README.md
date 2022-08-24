@@ -36,8 +36,8 @@ If you use this code for your research, please cite our paper:
 	year = {2022},
 	doi = {10.1101/2022.07.31.502211},
 	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/early/2022/08/01/2022.07.31.502211},
-	eprint = {https://www.biorxiv.org/content/early/2022/08/01/2022.07.31.502211.full.pdf},
+	URL = {https://www.biorxiv.org/content/10.1101/2022.07.31.502211v3},
+	eprint = {https://www.biorxiv.org/content/10.1101/2022.07.31.502211v3.full.pdf},
 	journal = {bioRxiv}
 }
 ```
