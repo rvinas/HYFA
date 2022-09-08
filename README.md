@@ -41,7 +41,7 @@
      * An extra column `tissue` denotes the tissue from which the sample was collected. The combination of donor and tissue identifier is unique.
    * The metadata is loaded from a separate CSV file (`METADATA_FILE`; see function `GTEx_metadata` in `train_gtex.py`). Rows correspond to donors and columns to covariates. By default, the script expects at least two columns: `AGE` (integer) and `SEX` (integer).
 
-2. Run the script `train_gtex.py` to train HYFA. This uses the default hyperparameters from `config/default.yaml`. After training, the model will be stored in your current working directory.
+2. Run the script `train_gtex.py` to train HYFA. This uses the default hyperparameters from `config/default.yaml`. After training, the model will be stored in your current working directory. We recommend training the model on a GPU machine (training takes between 15 and 30 minutes on a NVIDIA TITAN Xp).
 
 3. Once the model is trained, evaluate your results via the notebook `evaluate_GTEx_v8_normalised.ipynb`.
 
