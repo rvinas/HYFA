@@ -152,4 +152,4 @@ if __name__ == '__main__':
           compute_metrics_train=False,
           metric_fns=metric_fns)
 
-    # torch.save(model.state_dict(), '/local/scratch-2/rv340/multitissue/models/NAME.pth')
+    torch.save(model.state_dict(), 'model.pth')  # torch.save(model.state_dict(), '/local/scratch-2/rv340/multitissue/models/NAME.pth')
