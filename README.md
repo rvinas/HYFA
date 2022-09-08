@@ -1,35 +1,13 @@
-# Multi-tissue imputation
+# Hypergraph factorisation
 
-## Quick reference of main files
-- `train_gtex.py`: Main script to train the multi-tissue imputation model on normalised GTEx data
-- `evaluate_GTEx_v8_normalised.ipynb`: Analysis of multi-tissue imputation quality on normalised data (i.e. model trained via `train_gtex.py`)
-- `evaluate_GTEx_v9_signatures_normalised.ipynb`: Analysis of cell-type signature imputation (i.e. fine-tunes model on GTEx-v9)
-
-## Data
-- `src/data.py`: Data object encapsulating multi-tissue gene expression
-- `src/dataset.py`: Dataset that takes care of processing the data
-- `src/data_utils.py`: Data utilities
-
-## Model
-- `src/hnn.py`: Hypergraph neural network
-- `src/hypergraph_layer.py`: Message passing on hypergraph
-- `src/hnn_utils.py`: Hypergraph model utilities
-- `src/metagene_encoders.py`: Model transforming gene expression to metagene values
-- `src/metagene_decoders.py`: Model transforming metagene values to gene expression
-
-## Training
-- `src/train_utils.py`: Train/eval loops
-- `src/distribions.py`: Count data distributions
-- `src/losses.py`: Loss functions for different data likelihoods
-
-## Other utils
-- `src/pathway_utils.py`: Utilities to retrieve KEGG pathways
-- `src/ct_signature_utils.py`: Utilities for inferring cell-type signatures
+Welcome to the repository of "Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation"
 
 ## Installation
-1. Clone this repository.
+1. Clone this repository: ```git clone https://github.com/rvinas/HYFA.git```
 2. Install the dependencies via the following command:
-```pip install -r requirements.txt```. The installation typically takes a few minutes.
+```pip install -r requirements.txt```
+
+The installation typically takes a few minutes.
 
 ## Running the model
 1. Prepare your dataset:
@@ -44,9 +22,33 @@
 2. Run the script `train_gtex.py` to train HYFA. This uses the default hyperparameters from `config/default.yaml`. After training, the model will be stored in your current working directory. We recommend training the model on a GPU machine (training takes between 15 and 30 minutes on a NVIDIA TITAN Xp).
 
 3. Once the model is trained, evaluate your results via the notebook `evaluate_GTEx_v8_normalised.ipynb`.
-
-
 <!--- The function `GTEx_v8_normalised_adata` populates an [`AnnData`](https://anndata.readthedocs.io/en/latest/) object. --->
+
+## Quick reference of main files
+- `train_gtex.py`: Main script to train the multi-tissue imputation model on normalised GTEx data
+- `evaluate_GTEx_v8_normalised.ipynb`: Analysis of multi-tissue imputation quality on normalised data (i.e. model trained via `train_gtex.py`)
+- `evaluate_GTEx_v9_signatures_normalised.ipynb`: Analysis of cell-type signature imputation (i.e. fine-tunes model on GTEx-v9)
+
+### Data
+- `src/data.py`: Data object encapsulating multi-tissue gene expression
+- `src/dataset.py`: Dataset that takes care of processing the data
+- `src/data_utils.py`: Data utilities
+
+### Model
+- `src/hnn.py`: Hypergraph neural network
+- `src/hypergraph_layer.py`: Message passing on hypergraph
+- `src/hnn_utils.py`: Hypergraph model utilities
+- `src/metagene_encoders.py`: Model transforming gene expression to metagene values
+- `src/metagene_decoders.py`: Model transforming metagene values to gene expression
+
+### Training
+- `src/train_utils.py`: Train/eval loops
+- `src/distribions.py`: Count data distributions
+- `src/losses.py`: Loss functions for different data likelihoods
+
+### Other utils
+- `src/pathway_utils.py`: Utilities to retrieve KEGG pathways
+- `src/ct_signature_utils.py`: Utilities for inferring cell-type signatures
 
 ## Citation
 If you use this code for your research, please cite our paper:
