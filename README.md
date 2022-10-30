@@ -16,8 +16,27 @@ The installation typically takes a few minutes.
      * Entries correspond to normalised gene expression values.
      * The first row has the gene identifiers.
      * The first column has the donor identifiers. The file might contain multiple rows per donor.
-     * An extra column `tissue` denotes the tissue from which the sample was collected. The combination of donor and tissue identifier is unique.
-   * The metadata is loaded from a separate CSV file (`METADATA_FILE`; see function `GTEx_metadata` in `train_gtex.py`). Rows correspond to donors and columns to covariates. By default, the script expects at least two columns: `AGE` (integer) and `SEX` (integer).
+     * An extra column `tissue` denotes the tissue from which the sample was collected. The combination of donor and tissue identifier is unique.  
+   * The metadata is loaded from a separate CSV file (`METADATA_FILE`; see function `GTEx_metadata` in `train_gtex.py`). Rows correspond to donors and columns to covariates. By default, the script expects at least two columns: `AGE` (integer) and `SEX` (integer). 
+   
+   
+   Example of gene expression CSV file:
+     ```
+     , GENE1, GENE2, GENE3, tissue
+     INDIVIDUAL1, 0.0, 0.1, 0.2, heart
+     INDIVIDUAL1, 0.0, 0.1, 0.2, lung
+     INDIVIDUAL1, 0.0, 0.1, 0.2, breast
+     INDIVIDUAL2. 0.0, 0.1, 0.2, kidney
+     INDIVIDUAL3, 0.0, 0.1, 0.2, kidney
+     ```
+   
+   Example of metadata CSV file:
+   ```
+   , AGE, SEX
+   INDIVIDUAL1, 34, 0
+   INDIVIDUAL2. 55, 1
+   INDIVIDUAL3, 49, 1
+   ```
 
 2. Run the script `train_gtex.py` to train HYFA. This uses the default hyperparameters from `config/default.yaml`. After training, the model will be stored in your current working directory. We recommend training the model on a GPU machine (training takes between 15 and 30 minutes on a NVIDIA TITAN Xp).
 
