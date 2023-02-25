@@ -1,6 +1,20 @@
-# Hypergraph factorisation
+# Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation
 
-Welcome to the repository of "Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation"
+Welcome to the repository of *Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation*  — HYFA.
+
+**Overview of HYFA**
+
+![](fig/HYFA_overview.png)
+> HYFA processes gene expression from a number of collected tissues (e.g. accessible tissues) and infers the transcriptomes of uncollected tissues.
+
+**HYFA Workflow**
+
+![](fig/model_diagram.png)
+
+> 1. The model receives as input a variable number of gene expression samples $x^{(k)}_i$ corresponding to the collected tissues $k \in \mathcal{T}(i)$ of a given individual $i$. The samples $x^{(k)}_i$ are fed through an encoder that computes low-dimensional representations $e^{(k)}_{ij}$ for each metagene $j \in 1 .. M$. A *metagene* is a latent, low-dimensional representation that captures certain gene expression patterns of the high-dimensional input sample. 
+> 2. These representations are then used as hyperedge features in a message passing neural network that operates on a hypergraph. In the hypergraph representation, each hyperedge labelled with $e^{(k)}_{ij}$ connects an individual $i$ with metagene $j$ and tissue $k$ if tissue $k$ was collected for individual $i$, i.e. $k \in \mathcal{T}(i)$. Through message passing, HYFA learns factorised representations of individual, tissue, and metagene nodes. 
+> 3. To infer the gene expression of an uncollected tissue $u$ of individual $i$, the corresponding factorised representations are fed through a multilayer perceptron (MLP) that predicts low-dimensional features $e^{(u)}_{ij}$ for each metagene $j \in 1 .. M$. HYFA finally processes these latent representations through a decoder that recovers the uncollected gene expression sample $\hat{x}^{(u)}_{ij}$.
+
 
 ## Installation
 1. Clone this repository: ```git clone https://github.com/rvinas/HYFA.git```
