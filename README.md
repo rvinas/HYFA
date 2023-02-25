@@ -1,6 +1,6 @@
 # Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation
 
-Welcome to the repository of *Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation*  — HYFA.
+Welcome to the repository of *[Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation](https://www.biorxiv.org/content/10.1101/2022.07.31.502211)*  — HYFA.
 
 **Overview of HYFA**
 
