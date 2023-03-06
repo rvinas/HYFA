@@ -9,6 +9,17 @@ from src.data import Data
 from src.data_utils import select_obs, filter_not_obs
 
 
+def default_sample_fn(donor_adata_source, donor_adata_target):
+    # print(didx, donor_adata_source.shape[0])
+    n = donor_adata_source.shape[0]
+    nb_source = 1 + np.random.choice(n-1, 1)  # Number of source samples. Min: 1. Max: n - 1
+    idxs = np.random.choice(n, nb_source, replace=False)
+    source_obs = {k: donor_adata_source.obs[k].values[idxs] for k in donor_adata_source.obs.columns}
+    donor_adata_source = select_obs(donor_adata_source, source_obs)
+    donor_adata_target = filter_not_obs(donor_adata_target, source_obs)
+    return donor_adata_source, donor_adata_target
+
+
 class HypergraphDataset(Dataset):
     """
     This MultiTissueDataset takes care of masking out individuals that do not have the specified source/target tissues
@@ -17,7 +28,7 @@ class HypergraphDataset(Dataset):
     """
 
     def __init__(self, adata, adata_target=None, obs_source=None, obs_target=None, donor_key='Participant ID',
-                 static=False, disjoint=False, verbose=False, dtype=torch.float32):  # max_samples=500
+                 sample_fn=default_sample_fn, static=False, disjoint=False, verbose=False, dtype=torch.float32):
         """
         :param adata: torch tensor with dense data. Shape=(nb_samples, nb_genes, gene_dim)
         :param static: Whether to fix the source and target tissues of each individual. In other words, querying the
@@ -28,6 +39,7 @@ class HypergraphDataset(Dataset):
         self.dtype = dtype
         self.static = static
         self.disjoint = disjoint
+        self.sample_fn = sample_fn
         # self.max_samples = max_samples  # Maximum samples per donor
 
         # Select samples that satisfy source and target obs
@@ -90,13 +102,7 @@ class HypergraphDataset(Dataset):
         donor_adata_target = select_obs(self.adata_target, {self.donor_key: [didx]})
 
         if self.disjoint:  # Source and target sets do not contain same samples
-            # print(didx, donor_adata_source.shape[0])
-            n = donor_adata_source.shape[0]
-            nb_source = 1 + np.random.choice(n-1, 1)  # Number of source samples. Min: 1. Max: n - 1
-            idxs = np.random.choice(n, nb_source, replace=False)
-            source_obs = {k: donor_adata_source.obs[k].values[idxs] for k in donor_adata_source.obs.columns}
-            donor_adata_source = select_obs(donor_adata_source, source_obs)
-            donor_adata_target = filter_not_obs(donor_adata_target, source_obs)
+            donor_adata_source, donor_adata_target = self.sample_fn(donor_adata_source, donor_adata_target)
 
         return donor_adata_source, donor_adata_target
 
