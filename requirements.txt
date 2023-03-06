@@ -19,7 +19,7 @@ scipy==1.7.3
 seaborn==0.11.2
 statsmodels==0.13.2
 supervenn==0.4.1
-torch==1.8.0
+torch==1.13.1
 torch-scatter==2.0.9
 torch-sparse==0.6.12
 tqdm==4.63.0
