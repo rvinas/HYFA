@@ -23,6 +23,14 @@ Welcome to the repository of *[Hypergraph Factorisation for Multi-Tissue Gene Ex
 
 The installation typically takes a few minutes.
 
+## Data download
+To download the processed GTEx data, please follow these steps:
+```
+wget -O data/GTEx_data.csv.zip https://figshare.com/ndownloader/files/40208074
+wget -O data/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt https://storage.googleapis.com/gtex_analysis_v8/annotations/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt
+unzip data/GTEx_data.csv.zip -d data
+```
+
 ## Running the model
 1. Prepare your dataset:
    * By default, the script `train_gtex.py` loads a dataset from a CSV file (`GTEX_FILE`) with the following format:
