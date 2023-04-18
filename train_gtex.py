@@ -19,8 +19,8 @@ import scanpy as sc
 np.random.seed(0)
 num_workers = 4
 
-GTEX_FILE = '/local/scratch/rv340/gtex/GTEX_data.csv'
-METADATA_FILE = '/local/scratch/rv340/gtex/GTEx_Analysis_2017-06-05_v8_Annotations_SubjectPhenotypesDS.txt'
+GTEX_FILE = 'data/GTEX_data.csv'
+METADATA_FILE = 'data/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt'
 
 def GTEx(file=GTEX_FILE):
     """
@@ -74,8 +74,8 @@ def GTEx_v8_normalised_adata(file=GTEX_FILE):
     adata.obs['Participant ID_dyn'] = adata.obs['Participant ID']
 
     # Populate participant features
-    adata.obs['Age'] = metadata_df.loc[adata.obs['Participant ID']]['AGE'].values
-    adata.obs['Sex'] = metadata_df.loc[adata.obs['Participant ID']]['SEX'].values
+    adata.obs['Age'] = [float(a[:2]) for a in metadata_df.loc[adata.obs['Participant ID']]['AGE'].values]
+    adata.obs['Sex'] = metadata_df.loc[adata.obs['Participant ID']]['SEX'].values-1
     donor_age = adata.obs['Age'] / 100
     donor_sex, donor_sex_dict = map_to_ids(adata.obs['Sex'])
     adata.obsm['Participant ID_feat'] = np.stack((donor_age, donor_sex), axis=-1)
@@ -105,8 +105,9 @@ if __name__ == '__main__':
 
     # Split train/val/test
     donors = adata.obs['Participant ID'].values
-    train_donors, test_donors = split_patient_train_test(donors, train_rate=0.8)
-    train_donors, val_donors = split_patient_train_test(train_donors, train_rate=0.75)
+    train_donors = np.loadtxt('data/splits/gtex_train.txt', delimiter=',', dtype=str)
+    val_donors = np.loadtxt('data/splits/gtex_val.txt', delimiter=',', dtype=str)
+    test_donors = np.loadtxt('data/splits/gtex_test.txt', delimiter=',', dtype=str)
     train_mask = np.isin(donors, train_donors)
     test_mask = np.isin(donors, test_donors)
     val_mask = np.isin(donors, val_donors)
@@ -152,4 +153,4 @@ if __name__ == '__main__':
           compute_metrics_train=False,
           metric_fns=metric_fns)
 
-    torch.save(model.state_dict(), 'model.pth')  # torch.save(model.state_dict(), '/local/scratch-2/rv340/multitissue/models/NAME.pth')
+    torch.save(model.state_dict(), 'data/model.pth') 
