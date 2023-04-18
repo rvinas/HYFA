@@ -31,6 +31,11 @@ wget -O data/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt https://storag
 unzip data/GTEx_data.csv.zip -d data
 ```
 
+To download the pre-trained model, please run this command:
+```
+wget -O data/normalised_model_default.pth https://figshare.com/ndownloader/files/40208551
+```
+
 ## Running the model
 1. Prepare your dataset:
    * By default, the script `train_gtex.py` loads a dataset from a CSV file (`GTEX_FILE`) with the following format:
