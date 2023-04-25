@@ -31,13 +31,18 @@ wget -O data/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt https://storag
 unzip data/GTEx_data.csv.zip -d data
 ```
 
+To download the pre-trained model, please run this command:
+```
+wget -O data/normalised_model_default.pth https://figshare.com/ndownloader/files/40208551
+```
+
 ## Running the model
 1. Prepare your dataset:
    * By default, the script `train_gtex.py` loads a dataset from a CSV file (`GTEX_FILE`) with the following format:
      * Columns are genes and rows are samples.
      * Entries correspond to normalised gene expression values.
-     * The first row has the gene identifiers.
-     * The first column has the donor identifiers. The file might contain multiple rows per donor.
+     * The first row contains gene identifiers.
+     * The first column contains donor identifiers. The file might contain multiple rows per donor.
      * An extra column `tissue` denotes the tissue from which the sample was collected. The combination of donor and tissue identifier is unique.  
    * The metadata is loaded from a separate CSV file (`METADATA_FILE`; see function `GTEx_metadata` in `train_gtex.py`). Rows correspond to donors and columns to covariates. By default, the script expects at least two columns: `AGE` (integer) and `SEX` (integer). 
    
