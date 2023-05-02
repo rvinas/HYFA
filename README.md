@@ -103,7 +103,7 @@ wget -O data/normalised_model_default.pth https://figshare.com/ndownloader/files
 If you use this code for your research, please cite our paper:
 ```
 @article{Vinas2022Hypergraph,
-	author = {Vinas Torne, Ramon and Joshi, Chaitanya K. and Georgiev, Dobrik and Dumitrascu, Bianca and Gamazon, Eric and Lio, Pietro},
+	author = {Vinas Torne, Ramon and Joshi, Chaitanya K. and Georgiev, Dobrik and Lin, Phillip Dumitrascu, Bianca and Gamazon, Eric and Lio, Pietro},
 	title = {Hypergraph factorisation for multi-tissue gene expression imputation},
 	elocation-id = {2022.07.31.502211},
 	year = {2022},
