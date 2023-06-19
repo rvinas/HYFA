@@ -67,6 +67,8 @@ wget -O data/normalised_model_default.pth https://figshare.com/ndownloader/files
    INDIVIDUAL2. 55, 1
    INDIVIDUAL3, 49, 1
    ```
+   
+   See the notebook `hyfa_tutorial.ipynb` for an overview of the data format and main features of HYFA.
 
 2. Run the script `train_gtex.py` to train HYFA. This uses the default hyperparameters from `config/default.yaml`. After training, the model will be stored in your current working directory. We recommend training the model on a GPU machine (training takes between 15 and 30 minutes on a NVIDIA TITAN Xp).
 
@@ -74,6 +76,7 @@ wget -O data/normalised_model_default.pth https://figshare.com/ndownloader/files
 <!--- The function `GTEx_v8_normalised_adata` populates an [`AnnData`](https://anndata.readthedocs.io/en/latest/) object. --->
 
 ## Quick reference of main files
+- `hyfa_tutorial.ipynb`: Tutorial of the main features of HYFA.
 - `train_gtex.py`: Main script to train the multi-tissue imputation model on normalised GTEx data
 - `evaluate_GTEx_v8_normalised.ipynb`: Analysis of multi-tissue imputation quality on normalised data (i.e. model trained via `train_gtex.py`)
 - `evaluate_GTEx_v9_signatures_normalised.ipynb`: Analysis of cell-type signature imputation (i.e. fine-tunes model on GTEx-v9)
