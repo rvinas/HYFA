@@ -1,6 +1,6 @@
 # Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation
 [![DOI](https://zenodo.org/badge/513058833.svg)](https://zenodo.org/badge/latestdoi/513058833)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/rvinas/HYFA/blob/main/LICENCE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/rvinas/HYFA/blob/main/LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/release/python-370/)
 
 Welcome to the repository of *[Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation](https://www.biorxiv.org/content/10.1101/2022.07.31.502211)*  — HYFA.
@@ -103,7 +103,7 @@ wget -O data/normalised_model_default.pth https://figshare.com/ndownloader/files
 If you use this code for your research, please cite our paper:
 ```
 @article{Vinas2022Hypergraph,
-	author = {Vinas Torne, Ramon and Joshi, Chaitanya K. and Georgiev, Dobrik and Dumitrascu, Bianca and Gamazon, Eric and Lio, Pietro},
+	author = {Vinas Torne, Ramon and Joshi, Chaitanya K. and Georgiev, Dobrik and Lin, Phillip and Dumitrascu, Bianca and Gamazon, Eric and Lio, Pietro},
 	title = {Hypergraph factorisation for multi-tissue gene expression imputation},
 	elocation-id = {2022.07.31.502211},
 	year = {2022},
