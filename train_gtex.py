@@ -83,6 +83,15 @@ def GTEx_v8_normalised_adata(file=GTEX_FILE):
 
     # Put gene expression in layer
     adata.layers['x'] = adata.X
+    
+    # Set up tissue colors
+    colors = ['#ffaa56', '#cdad22', '#8fbc8f', '#8b1c62', '#ee6a50', '#ff0000', '#eeee00', '#eeee00', '#eeee00',
+          '#eeee00', '#eeee00', '#eeee00', '#eeee00', '#eeee00', '#eeee00', '#eeee00', '#eeee00', '#eeee00',
+          '#eeee00', '#00cdcd', '#9ac0cd', '#ee82ee', '#cdb79e', '#eec591', '#8b7355', '#8b7355', '#cdaa7d',
+          '#b452cd', '#7a378b', '#cdb79e', '#cdb79e', '#9acd32', '#cdb79e', '#7A67EE', '#FFD700', '#FFB6C1',
+          '#CD9B1D', '#B4EEB4', '#D9D9D9', '#3A5FCD', '#1E90FF', '#CDB79E', '#CDB79E', '#FFD39B', '#A6A6A6',
+          '#008B45', '#EED5D2', '#EED5D2', '#FF00FF']
+    adata.uns['Tissue_colors'] = colors
 
     return adata
 
