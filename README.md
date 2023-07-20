@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/rvinas/HYFA/blob/main/LICENSE)
 [![Python 3.8+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/release/python-370/)
 
-Welcome to the repository of *[Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation](https://www.biorxiv.org/content/10.1101/2022.07.31.502211)*  — HYFA.
+Welcome to the repository of *[Hypergraph Factorisation for Multi-Tissue Gene Expression Imputation](https://www.nature.com/articles/s42256-023-00684-8)*  — HYFA.
 
 **Overview of HYFA**
 
