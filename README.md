@@ -105,15 +105,12 @@ wget -O data/normalised_model_default.pth https://figshare.com/ndownloader/files
 ## Citation
 If you use this code for your research, please cite our paper:
 ```
-@article{Vinas2022Hypergraph,
-	author = {Vinas Torne, Ramon and Joshi, Chaitanya K. and Georgiev, Dobrik and Lin, Phillip and Dumitrascu, Bianca and Gamazon, Eric and Lio, Pietro},
-	title = {Hypergraph factorisation for multi-tissue gene expression imputation},
-	elocation-id = {2022.07.31.502211},
-	year = {2022},
-	doi = {10.1101/2022.07.31.502211},
-	publisher = {Cold Spring Harbor Laboratory},
-	URL = {https://www.biorxiv.org/content/10.1101/2022.07.31.502211v3},
-	eprint = {https://www.biorxiv.org/content/10.1101/2022.07.31.502211v3.full.pdf},
-	journal = {bioRxiv}
+@article{vinas2023hypergraph,
+  title={Hypergraph factorization for multi-tissue gene expression imputation},
+  author={Vi{\~n}as, Ramon and Joshi, Chaitanya K and Georgiev, Dobrik and Lin, Phillip and Dumitrascu, Bianca and Gamazon, Eric R and Li{\`o}, Pietro},
+  journal={Nature Machine Intelligence},
+  pages={1--15},
+  year={2023},
+  publisher={Nature Publishing Group UK London}
 }
 ```
