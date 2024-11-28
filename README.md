@@ -30,7 +30,7 @@ The installation typically takes a few minutes.
 To download the processed GTEx data, please follow these steps:
 ```
 wget -O data/GTEx_data.csv.zip https://figshare.com/ndownloader/files/40208074
-wget -O data/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt https://storage.googleapis.com/gtex_analysis_v8/annotations/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt
+wget -O data/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt https://storage.googleapis.com/adult-gtex/annotations/v8/metadata-files/GTEx_Analysis_v8_Annotations_SubjectPhenotypesDS.txt
 unzip data/GTEx_data.csv.zip -d data
 ```
 
